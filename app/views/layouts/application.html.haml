@@ -1,0 +1,22 @@
+!!!5
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= Ok Projects
+    = stylesheet_link_tag "application"
+    = csrf_meta_tags
+
+  %body
+    %div#app
+      %header#app-header
+        != render :template => 'layout/navigation'
+
+      %div.row
+        %div#app-content.nine.columns
+          = yield if search_engine?
+        %aside#app-sidebar.three.columns
+
+      %footer#app-footer
+
+    = javascript_include_tag "application" unless search_engine?

@@ -11,5 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
-//= require_tree .
+//= require foundation
+//= require jade/runtime
+//= require app
+//= require_self
+
+$(document).ready(function(){
+  new App({el: $("#app-content")});
+});
