@@ -1,11 +1,17 @@
 class ProjectsController < ApplicationController
 
   def index
-    render :json => {}
+    respond_to do |format|
+      format.html
+      format.json { render :json => {} }
+    end
   end
 
   def show
-    render :json => {}
+    respond_to do |format|
+      format.html
+      format.json { render :json => {} }
+    end
   end
 
 end

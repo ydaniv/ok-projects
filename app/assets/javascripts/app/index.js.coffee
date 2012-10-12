@@ -10,14 +10,16 @@
 #= require_tree ./models
 #= require_tree ./controllers
 #= require_tree ./views
+#= require ./main
 
 class App extends Spine.Controller
+
   constructor: ->
     super
 
+    @main = new App.Main
+    @append(@main)
     @setupAjax()
-    # @projects = new App.Projects
-    #@append(@projects)
     Spine.Route.setup(history:true)
 
   setupAjax: ->
